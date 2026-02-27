@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
+
+
+
+/* 
+
+SUMMARY
+1. Makes card heights uniform regardless of differences in content amount
+2. Dynamic loading of cards inner contents upon hover and focus events 
+
+NOTE
+@media (hover: hover) and (min-width: 700px) and (prefers-reduced-motion: no-preference) 
+transform: translateY()
+
+*/
+
+.tiny-cards-title {
+    font: 900 120px "Rubik", sans-serif;
+    text-transform: uppercase;
+    background: url("/images/bg-img.jpg");
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+}
+
+.tiny-cards.container {
+    display: grid;
+    place-items: center;
+}
+
+.tiny-cards-header { 
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.main--tiny-cards {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: grid;
+    gap: 1rem;
+    max-width: 1024px;
+
+    @media screen and (min-width: 700px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: 950px) {
+        grid-template-columns: repeat(4, 1fr)
+    }
+}
+
+.tiny-cards__section { 
+    background-size: cover; 
+    background-color: #3a8491;
+    border-radius: 4px;
+
+    @media screen and (min-width: 700px) { 
+        height: 350px; }}
+
+/* moving container back into place on hover and focus events */
+.tiny-cards__section:hover .tiny-cards__inner {
+    transform: translateY(0);
+    height: calc(350px - 4rem);
+}
+
+
+.tiny-cards__section:focus-within .tiny-cards__inner {
+    transform: translateY(0);
+    height: calc(350px - 4rem);
+}
+
+/* moving all non-heading elements inside the container back into place with full opacity */
+.tiny-cards__section:hover .tiny-cards__inner > *:not(.tiny-cards__header) {
+    opacity: 1;    
+    transform: translateY(0);
+}
+.tiny-cards__section:focus-within .tiny-cards__inner > *:not(.tiny-cards__header) {
+    opacity: 1;    
+    transform: translateY(0);
+}
+
+.miro-island { background-image: url("/images/1.jpg"); }
+.flamingo-beach { background-image: url("/images/2.jpg"); }
+.protur-safari { background-image: url("/images/3.jpg"); }
+.mountain-view { background-image: url("/images/4.jpg"); }
+
+
+/* Earlier in this chapter, we gave the inner container a margin of 1rem and padding of 1rem, meaning that the height it needs to take up the full height of the space provided is equal to 100% minus 4rem (1 rem of padding and 1 rem of margin at the top and the same at the bottom, equaling 4 rems total). To achieve this effect in CSS, we use the calc() function to do the math for us, assigning calc(100% - 4rem) to the height property. The combination of defined rows (grid-template-rows: min-content auto min-content) and set height creates a layout in which the header and link take only as much room as they need and the middle section (the paragraph element) gets what is left. */
+
+.tiny-cards__inner {
+    /* giving all cards equal height regardless of content amount */
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+    height: calc(100% - 4rem);
+    /* /.giving all cards equal height regardless of content amount */
+    align-items: center;
+    background-color: rgb(0 0 0 / 0.75);
+    margin: 1rem;
+    padding: 1rem;
+    color: whitesmoke;
+    font: 14px "Rubik", sans-serif;
+
+    /* pushing the inner content below the card */ 
+    @media (hover: hover) and (min-width: 700px) and (prefers-reduced-motion: no-preference) {
+        transform: translateY(calc(350px - 8rem));
+        /* hiding inner content when below the card */
+        height: 5rem;
+        overflow: hidden;
+        /* for mouseover effect for showing inner card */
+        transition: all 700ms ease-in-out;
+    }
+}
+
+/* hides all non-header content */
+.tiny-cards__inner > *:not(.tiny-cards__header) {
+    opacity: 0;
+    transform: translateY(1rem);
+    /*  */
+    transition: all 700ms ease-in-out;
+}
+
+.tiny-cards__header {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-block: unset;
+    margin-block-end: 0;
+}
+
+.tiny-cards__text {
+    text-align: center;
+    font: italic 1.125rem "Cardo", cursive;
+    line-height: 1.35;
+}
+
+.tiny-cards__link {
+    display: flex;
+    justify-content: center;
+    padding-block: 1rem;
+    padding-inline: 2rem;
+    background-color: #ffa600;
+    border-radius: 4px;
+    color: #090909;
+    text-decoration: none;
+}
+
+.tiny-cards__link:hover {
+    background-color: #e69500;
+}
+
+.tiny-cards__link:focus {
+    outline: 1px dashed #e69500;
+    outline-offset: 3px;
+}
