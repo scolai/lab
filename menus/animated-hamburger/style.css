@@ -1,0 +1,99 @@
+.hamburger-menu {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bbe1bb;
+    transition: background-color 0.4s linear;
+}
+
+.hamburger-menu.nav-open {
+    background-color: #f2e9ca;
+}
+
+.nav-icon {
+    position: relative;
+    height: 42px;
+    width: 58px;
+    cursor: pointer;
+}
+
+.nav-icon span {
+    position: absolute;
+    width: 50%;
+    height: 6px;
+    background-color: #000;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-open span {
+    background-color: #fff;
+}
+
+.nav-icon span:nth-child(odd) {
+    /* 1, 3, 5 */
+    left: 0;
+    border-radius: 9px 0 0 9px; 
+}
+
+
+.nav-icon span:nth-child(even) {
+    /* 2, 4, 6 */
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+}
+
+.nav-icon span:nth-child(1),
+.nav-icon span:nth-child(2) {
+    top: 0;
+}
+
+.nav-icon span:nth-child(3),
+.nav-icon span:nth-child(4) {
+    top: 13px;
+}
+
+.nav-icon span:nth-child(5),
+.nav-icon span:nth-child(6) {
+    top: 26px;
+}
+
+.nav-open .nav-icon span:nth-child(1),
+.nav-open .nav-icon span:nth-child(6) {
+    transform: rotate(45deg);
+}
+
+.nav-open .nav-icon span:nth-child(2),
+.nav-open .nav-icon span:nth-child(5) {
+    transform: rotate(-45deg);
+}
+
+.nav-open .nav-icon span:nth-child(1) {
+    top: 6px;
+    left: 5px;
+}  
+
+.nav-open .nav-icon span:nth-child(2) {
+    top: 6px;
+    left: calc(50% - 5px);
+}
+
+.nav-open .nav-icon span:nth-child(3) {
+    left: -100px;
+    opacity: 0;
+}
+
+.nav-open .nav-icon span:nth-child(4) {
+    left: 150%;
+    opacity: 0;
+}
+
+.nav-open .nav-icon span:nth-child(5) {
+    top: 23px;
+    left: 5px;
+}
+
+.nav-open .nav-icon span:nth-child(6) {
+    top: 23px;
+    left: calc(50% - 5px);
+}

@@ -1,0 +1,44 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    min-height: 200px;
+    width: 50vw;
+    max-width: 500px;
+    border: 5px solid red;
+    overflow-y: auto;
+    container-type: inline-size;
+}
+
+.box {
+    height: 500px;
+    background-color: greenyellow;
+}
+
+.container2 {
+    width: 50vw;
+    border: 5px solid red;
+    container-type: inline-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box2 {
+    height: 500px;
+    width: 95%;
+    min-width: 100px;
+    background-color: greenyellow;
+}
+
+@container (min-width: 500px) {
+    .box2 {
+        display: none;
+   }
+}

@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
+.newspaper-layout {
+    background-color: #f9f7f1;
+    font-family: 'PT Serif', serif;
+    color: #404040;
+    padding: 0 24px;
+}
+
+.newspaper-title {
+    font: 700 4rem/1 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    font-family: "Oswald", sans-serif;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.newspaper-heading {
+    font: 3rem/.95 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin-block-end: 16px;
+}
+
+.newspaper-subheading {
+    font: 2rem/.95 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin-block-end: 12px;
+}
+
+.newspaper-time {
+    font: 700 1.5rem 'Oswald', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    border-top: 3px solid #333333;
+    border-bottom: 3px solid #333333;
+    padding: 12px 0;
+    display: block;
+}
+
+.newspaper-time sup {
+    font-size: .875rem;
+    font-weight: normal;
+}
+
+.newspaper-blockquote {
+    font: 1.8rem/1.25 'Oswald', sans-serif;
+    margin: 1.5rem 2rem;
+}
+.newspaper-blockquote::before { content: open-quote; }
+
+.newspaper-blockquote::after { content: close-quote; }
+

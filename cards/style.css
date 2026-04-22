@@ -14,6 +14,8 @@ transform: translateY()
 
 */
 
+.tiny-cards {
+
 .tiny-cards-title {
     font: 900 120px "Rubik", sans-serif;
     text-transform: uppercase;
@@ -155,4 +157,5 @@ transform: translateY()
 .tiny-cards__link:focus {
     outline: 1px dashed #e69500;
     outline-offset: 3px;
+}
 }
