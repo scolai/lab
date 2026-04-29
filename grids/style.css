@@ -179,7 +179,7 @@ header, nav {
     grid-auto-rows: 1fr;
     grid-gap: 1em;
     grid-auto-flow: dense;
-    max-inline-size: 1000px;
+
     margin-inline: auto;
 
     .featured {
